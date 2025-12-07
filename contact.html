@@ -30,14 +30,14 @@
   </head>
   <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
     <!-- Navigation -->
-    <nav
+      <nav
       class="w-full border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur"
     >
       <div
         class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4"
       >
         <!-- Logo -->
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 nav__logo">
           <div
             class="h-9 w-9 flex items-center justify-center rounded-full bg-primary text-xs font-semibold tracking-tight"
           >
@@ -51,129 +51,186 @@
         <!-- Mobile menu button -->
         <button
           id="menu-btn"
-          class="inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
+          class="nav__menu__btn inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
         >
           <span class="sr-only">Open main menu</span>
           <i class="ri-menu-line text-xl"></i>
         </button>
 
-        <!-- Nav Links (desktop) -->
-        <ul
+        <!-- Nav Links -->
+        <!-- <ul
           id="nav-links"
-          class="hidden md:flex items-center gap-6 text-sm font-medium"
+          class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
         >
-          <li>
+          <li class="link">
             <a
               href="index.html"
               class="hover:text-primary transition-colors"
               >Home</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="about.html"
               class="hover:text-primary transition-colors"
               >About</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="classes.html"
               class="hover:text-primary transition-colors"
               >Classes</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="trainers.html"
               class="hover:text-primary transition-colors"
               >Trainers</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="pricing.html"
               class="hover:text-primary transition-colors"
               >Package</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="contact.html"
-              class="text-primary font-semibold"
+              class="hover:text-primary transition-colors"
               >Contact Us</a
             >
           </li>
-          <li>
+          <li class="link">
             <a href="profile.html">
               <button
-                class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+                class="btn inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
               >
                 Profile
               </button>
             </a>
+          </li>
+        </ul> -->
+
+        <ul
+          id="nav-links"
+          class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
+        >
+          <li class="link">
+            <a href="index.html" class="hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li class="link">
+            <a href="about.html" class="hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li class="link">
+            <a href="classes.html" class="hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li class="link">
+            <a href="trainers.html" class="hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li class="link">
+            <a href="pricing.html" class="hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li class="link">
+            <a href="contact.html" class="hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+
+          <!-- ডেস্কটপে Login / Signup / Profile / Logout -->
+          <li class="link" id="loginLink">
+            <a href="login.html" class="hover:text-primary transition-colors"
+              >Login</a
+            >
+          </li>
+          <li class="link" id="signupLink">
+            <a href="signup.html" class="hover:text-primary transition-colors"
+              >Signup</a
+            >
+          </li>
+
+          <li class="link" id="profileLink" style="display: none">
+            <a href="profile.html">
+              <button
+                class="btn inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+          <li class="link" id="logoutBtn" style="display: none">
+            <button
+              class="btn inline-flex items-center rounded-full bg-slate-800 px-4 py-1.5 text-sm font-semibold text-slate-100 hover:bg-slate-700 transition"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </div>
 
       <!-- Mobile dropdown -->
+  
+
       <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800">
-        <ul
-          class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
+  <ul class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950">
+    <li>
+      <a href="index.html" class="block py-1 hover:text-primary transition-colors">Home</a>
+    </li>
+    <li>
+      <a href="about.html" class="block py-1 hover:text-primary transition-colors">About</a>
+    </li>
+    <li>
+      <a href="classes.html" class="block py-1 hover:text-primary transition-colors">Classes</a>
+    </li>
+    <li>
+      <a href="trainers.html" class="block py-1 hover:text-primary transition-colors">Trainers</a>
+    </li>
+    <li>
+      <a href="pricing.html" class="block py-1 hover:text-primary transition-colors">Package</a>
+    </li>
+    <li>
+      <a href="contact.html" class="block py-1 hover:text-primary transition-colors">Contact Us</a>
+    </li>
+
+    <!-- মোবাইলের Login / Signup / Profile / Logout -->
+    <li id="mLoginLink">
+      <a href="login.html" class="block py-1 hover:text-primary transition-colors">Login</a>
+    </li>
+    <li id="mSignupLink">
+      <a href="signup.html" class="block py-1 hover:text-primary transition-colors">Signup</a>
+    </li>
+    <li class="pt-1" id="mProfileLink" style="display:none;">
+      <a href="profile.html">
+        <button
+          class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
         >
-          <li>
-            <a
-              href="index.html"
-              class="block py-1 hover:text-primary transition-colors"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="about.html"
-              class="block py-1 hover:text-primary transition-colors"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="classes.html"
-              class="block py-1 hover:text-primary transition-colors"
-              >Classes</a
-            >
-          </li>
-          <li>
-            <a
-              href="trainers.html"
-              class="block py-1 hover:text-primary transition-colors"
-              >Trainers</a
-            >
-          </li>
-          <li>
-            <a
-              href="pricing.html"
-              class="block py-1 hover:text-primary transition-colors"
-              >Package</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact.html"
-              class="block py-1 text-primary font-semibold"
-              >Contact Us</a
-            >
-          </li>
-          <li class="pt-1">
-            <a href="profile.html">
-              <button
-                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
-              >
-                Profile
-              </button>
-            </a>
-          </li>
-        </ul>
-      </div>
+          Profile
+        </button>
+      </a>
+    </li>
+    <li id="mLogoutBtn" style="display:none;">
+      <button
+        class="w-full inline-flex justify-center rounded-full bg-slate-800 px-4 py-1.5 text-sm font-semibold text-slate-100 hover:bg-slate-700 transition"
+      >
+        Logout
+      </button>
+    </li>
+  </ul>
+</div>
+
     </nav>
 
     <!-- Contact Section -->
@@ -457,6 +514,47 @@
         duration: 800,
         delay: 200,
       });
+
+      function updateNavAuthUI() {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+        const loginLink = document.getElementById("loginLink");
+        const signupLink = document.getElementById("signupLink");
+        const profileLink = document.getElementById("profileLink");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        const mLoginLink = document.getElementById("mLoginLink");
+        const mSignupLink = document.getElementById("mSignupLink");
+        const mProfileLink = document.getElementById("mProfileLink");
+        const mLogoutBtn = document.getElementById("mLogoutBtn");
+
+        // Login + Signup
+        [loginLink, signupLink, mLoginLink, mSignupLink].forEach((el) => {
+          if (!el) return;
+          el.style.display = isLoggedIn ? "none" : "";
+        });
+
+        // Profile + Logout
+        [profileLink, logoutBtn, mProfileLink, mLogoutBtn].forEach((el) => {
+          if (!el) return;
+          el.style.display = isLoggedIn ? "" : "none";
+        });
+      }
+
+      function handleLogout() {
+        localStorage.setItem("loggedIn", "false");
+        updateNavAuthUI();
+        window.location.href = "index.html"; // logout হলে home এ ফেরত
+      }
+
+      // Logout button listener
+      const logoutBtn = document.getElementById("logoutBtn");
+      const mLogoutBtn = document.getElementById("mLogoutBtn");
+      if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
+      if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
+
+      // পেজ লোড হলে একবার চেক করো
+      updateNavAuthUI();
     </script>
   </body>
 </html>
