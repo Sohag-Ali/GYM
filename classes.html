@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Classes | ADS GYM</title>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f97316",
+              dark: "#020617",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav
+      class="w-full border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div
+            class="h-9 w-9 flex items-center justify-center rounded-full bg-primary text-xs font-semibold tracking-tight"
+          >
+            ADS
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">
+            ADS <span class="text-primary">GYM</span>
+          </h2>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menu-btn"
+          class="inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
+        >
+          <span class="sr-only">Open main menu</span>
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+
+        <!-- Nav Links (desktop) -->
+        <ul
+          id="nav-links"
+          class="hidden md:flex items-center gap-6 text-sm font-medium"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="text-primary font-semibold"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a href="profile.html">
+              <button
+                class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800">
+        <ul
+          class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="block py-1 text-primary font-semibold"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li class="pt-1">
+            <a href="profile.html">
+              <button
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <!-- Classes Section -->
+      <section
+        id="class"
+        class="max-w-6xl mx-auto px-4 py-12 md:py-16"
+      >
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3"
+          >
+            Our Classes
+          </h2>
+          <p class="text-sm md:text-base text-slate-300">
+            Discover a diverse range of exhilarating classes at our gym designed
+            to cater to all fitness levels and interests. Whether you're a
+            seasoned athlete or just starting your fitness journey, our classes
+            offer something for everyone.
+          </p>
+        </div>
+
+        <div
+          class="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 class__grid"
+        >
+          <!-- Card 1 -->
+          <div
+            class="relative bg-slate-900/70 border border-slate-800 rounded-3xl overflow-hidden shadow-lg class__card"
+          >
+            <!-- dotted bg -->
+            <img
+              src="assets/dot-bg.png"
+              alt="bg"
+              class="absolute -top-6 -left-6 w-32 opacity-60 pointer-events-none select-none class__bg"
+            />
+            <!-- image -->
+            <div class="relative">
+              <img
+                src="assets/class-1.jpg"
+                alt="Strength Training"
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <!-- content -->
+            <div class="p-5 space-y-1.5 class__content">
+              <h4 class="text-lg font-semibold text-slate-100 mb-1">
+                Strength Training
+              </h4>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Duration:</span>
+                8–12 weeks
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Frequency:</span>
+                3–4 times/week
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Time:</span>
+                45–60 mins/session
+              </p>
+              <p class="text-xs text-slate-300 pt-1">
+                <span class="font-semibold text-slate-100">Focus:</span>
+                Muscle strength, free weights & machines, structured rest
+                between sets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="relative bg-slate-900/70 border border-slate-800 rounded-3xl overflow-hidden shadow-lg class__card"
+          >
+            <img
+              src="assets/dot-bg.png"
+              alt="bg"
+              class="absolute -top-6 -left-6 w-32 opacity-60 pointer-events-none select-none class__bg"
+            />
+            <div class="relative">
+              <img
+                src="assets/class-2.jpg"
+                alt="Flexibility & Mobility"
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="p-5 space-y-1.5 class__content">
+              <h4 class="text-lg font-semibold text-slate-100 mb-1">
+                Flexibility & Mobility
+              </h4>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Duration:</span>
+                Ongoing
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Frequency:</span>
+                2–3 times/week
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Time:</span>
+                30–45 mins/session
+              </p>
+              <p class="text-xs text-slate-300 pt-1">
+                <span class="font-semibold text-slate-100">Focus:</span>
+                Flexibility, joint health, yoga/Pilates inspired low-impact
+                movements.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="relative bg-slate-900/70 border border-slate-800 rounded-3xl overflow-hidden shadow-lg class__card"
+          >
+            <img
+              src="assets/dot-bg.png"
+              alt="bg"
+              class="absolute -top-6 -left-6 w-32 opacity-60 pointer-events-none select-none class__bg"
+            />
+            <div class="relative">
+              <img
+                src="assets/class-3.jpg"
+                alt="HIIT"
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="p-5 space-y-1.5 class__content">
+              <h4 class="text-lg font-semibold text-slate-100 mb-1">
+                HIIT
+              </h4>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Duration:</span>
+                6–8 weeks
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Frequency:</span>
+                2–3 times/week
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Time:</span>
+                20–30 mins/session
+              </p>
+              <p class="text-xs text-slate-300 pt-1">
+                <span class="font-semibold text-slate-100">Focus:</span>
+                Intense cardio intervals, fast circuits, serious calorie burn.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="relative bg-slate-900/70 border border-slate-800 rounded-3xl overflow-hidden shadow-lg class__card"
+          >
+            <img
+              src="assets/dot-bg.png"
+              alt="bg"
+              class="absolute -top-6 -left-6 w-32 opacity-60 pointer-events-none select-none class__bg"
+            />
+            <div class="relative">
+              <img
+                src="assets/class-4.jpg"
+                alt="Group Fitness"
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="p-5 space-y-1.5 class__content">
+              <h4 class="text-lg font-semibold text-slate-100 mb-1">
+                Group Fitness
+              </h4>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Duration:</span>
+                Ongoing
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Frequency:</span>
+                2–4 times/week
+              </p>
+              <p class="text-xs text-slate-300">
+                <span class="font-semibold text-slate-100">Time:</span>
+                45–60 mins/session
+              </p>
+              <p class="text-xs text-slate-300 pt-1">
+                <span class="font-semibold text-slate-100">Focus:</span>
+                Fun cardio, dance-based sessions in an energetic social setting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950">
+      <div
+        class="max-w-6xl mx-auto px-4 py-10 md:py-14 grid gap-8 md:grid-cols-4"
+      >
+        <div class="space-y-4">
+          <div>
+            <a
+              href="index.html"
+              class="text-xl font-bold tracking-tight hover:text-primary transition-colors"
+              >ADS GYM</a
+            >
+          </div>
+          <p class="text-sm text-slate-300">
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans. Let's sweat, achieve, and conquer
+            together!
+          </p>
+          <div class="flex gap-3 text-xl">
+            <a href="#" class="hover:text-primary">
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a href="#" class="hover:text-primary">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="#" class="hover:text-primary">
+              <i class="ri-twitter-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Company</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Business</a>
+            <a href="#" class="hover:text-primary">Franchise</a>
+            <a href="#" class="hover:text-primary">Partnership</a>
+            <a href="#" class="hover:text-primary">Network</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">About Us</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Blogs</a>
+            <a href="#" class="hover:text-primary">Security</a>
+            <a href="#" class="hover:text-primary">Careers</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Contact</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="contact.html" class="hover:text-primary">Contact Us</a>
+            <a href="#" class="hover:text-primary">Privacy Policy</a>
+            <a href="#" class="hover:text-primary">Terms & Conditions</a>
+            <a href="#" class="hover:text-primary">BMI Calculator</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-slate-800 py-4 text-center text-xs text-slate-500"
+      >
+        Copyright © 2024 ADS GYM. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // ScrollReveal animations
+      ScrollReveal().reveal("#class h2", {
+        distance: "30px",
+        origin: "top",
+        duration: 700,
+        delay: 120,
+      });
+      ScrollReveal().reveal(".class__card", {
+        distance: "40px",
+        origin: "bottom",
+        duration: 800,
+        interval: 120,
+      });
+    </script>
+  </body>
+</html>

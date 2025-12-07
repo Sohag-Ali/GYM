@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Contact | ADS GYM</title>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f97316",
+              dark: "#020617",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav
+      class="w-full border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div
+            class="h-9 w-9 flex items-center justify-center rounded-full bg-primary text-xs font-semibold tracking-tight"
+          >
+            ADS
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">
+            ADS <span class="text-primary">GYM</span>
+          </h2>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menu-btn"
+          class="inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
+        >
+          <span class="sr-only">Open main menu</span>
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+
+        <!-- Nav Links (desktop) -->
+        <ul
+          id="nav-links"
+          class="hidden md:flex items-center gap-6 text-sm font-medium"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="text-primary font-semibold"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a href="profile.html">
+              <button
+                class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800">
+        <ul
+          class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-1 text-primary font-semibold"
+              >Contact Us</a
+            >
+          </li>
+          <li class="pt-1">
+            <a href="profile.html">
+              <button
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <main class="py-12 md:py-16 flex-1">
+      <section
+        id="contact"
+        class="max-w-6xl mx-auto px-4"
+      >
+        <div class="mb-8 text-center">
+          <h1
+            class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3"
+          >
+            Any Questions? <span class="text-primary">Contact Us</span>
+          </h1>
+          <p class="text-sm md:text-base text-slate-300 max-w-2xl mx-auto">
+            Have a query about membership, classes, or timings? Reach out to us
+            using the details below or send us a message through the form.
+          </p>
+        </div>
+
+        <div
+          class="grid gap-8 md:grid-cols-2 items-start mt-8"
+        >
+          <!-- Contact Details -->
+          <div
+            class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg space-y-4"
+          >
+            <h2 class="text-xl md:text-2xl font-bold mb-2">
+              Get in <span class="text-primary">Touch</span>
+            </h2>
+            <p class="text-sm text-slate-300">
+              Our team is here to help you with any membership inquiries,
+              training programs, or general questions about ADS GYM.
+            </p>
+
+            <div class="mt-4 space-y-3 text-sm">
+              <p class="flex items-start gap-3">
+                <span
+                  class="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary"
+                  ><i class="ri-map-pin-2-fill"></i
+                ></span>
+                <span>
+                  <strong class="block text-slate-100">Address</strong>
+                  Daffodil Smart City, Ashuliya, Dhaka
+                </span>
+              </p>
+              <p class="flex items-start gap-3">
+                <span
+                  class="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary"
+                  ><i class="ri-phone-fill"></i
+                ></span>
+                <span>
+                  <strong class="block text-slate-100">Hotline</strong>
+                  +088 01313862541
+                </span>
+              </p>
+              <p class="flex items-start gap-3">
+                <span
+                  class="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary"
+                  ><i class="ri-mail-fill"></i
+                ></span>
+                <span>
+                  <strong class="block text-slate-100">Email</strong>
+                  adsgym@gmail.com
+                </span>
+              </p>
+              <p class="flex items-start gap-3">
+                <span
+                  class="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary"
+                  ><i class="ri-global-line"></i
+                ></span>
+                <span>
+                  <strong class="block text-slate-100">Website</strong>
+                  adsgym.com
+                </span>
+              </p>
+            </div>
+
+            <div class="mt-5">
+              <h3 class="text-sm font-semibold mb-2 text-slate-200">
+                Opening Hours
+              </h3>
+              <ul class="text-xs md:text-sm text-slate-300 space-y-1.5">
+                <li>Saturday - Thursday: 6:00 AM - 11:00 PM</li>
+                <li>Friday: 8:00 AM - 9:00 PM</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form
+            class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg space-y-4"
+            id="contactForm"
+          >
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="flex flex-col gap-1.5">
+                <label
+                  for="name"
+                  class="text-xs font-medium text-slate-200"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter your name"
+                  required
+                  class="w-full rounded-xl bg-slate-950/60 border border-slate-700 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/60"
+                />
+              </div>
+
+              <div class="flex flex-col gap-1.5">
+                <label
+                  for="email"
+                  class="text-xs font-medium text-slate-200"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                  class="w-full rounded-xl bg-slate-950/60 border border-slate-700 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/60"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label
+                for="mobile"
+                class="text-xs font-medium text-slate-200"
+                >Mobile No.</label
+              >
+              <input
+                type="tel"
+                id="mobile"
+                placeholder="Enter your mobile number"
+                required
+                class="w-full rounded-xl bg-slate-950/60 border border-slate-700 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/60"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label
+                for="message"
+                class="text-xs font-medium text-slate-200"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Enter your message"
+                required
+                class="w-full rounded-2xl bg-slate-950/60 border border-slate-700 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/60 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-2 inline-flex items-center justify-center w-full md:w-auto rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg hover:bg-orange-500 transition"
+            >
+              Submit
+            </button>
+
+            <p
+              id="formMessage"
+              class="hidden text-xs mt-3 text-green-400"
+            >
+              Thank you! Your message has been submitted.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950">
+      <div
+        class="max-w-6xl mx-auto px-4 py-10 md:py-14 grid gap-8 md:grid-cols-4"
+      >
+        <div class="space-y-4">
+          <div>
+            <a
+              href="index.html"
+              class="text-xl font-bold tracking-tight hover:text-primary transition-colors"
+              >ADS GYM</a
+            >
+          </div>
+          <p class="text-sm text-slate-300">
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans. Let's sweat, achieve, and conquer
+            together!
+          </p>
+          <div class="flex gap-3 text-xl">
+            <a href="#" class="hover:text-primary">
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a href="#" class="hover:text-primary">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="#" class="hover:text-primary">
+              <i class="ri-twitter-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Company</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Business</a>
+            <a href="#" class="hover:text-primary">Franchise</a>
+            <a href="#" class="hover:text-primary">Partnership</a>
+            <a href="#" class="hover:text-primary">Network</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">About Us</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Blogs</a>
+            <a href="#" class="hover:text-primary">Security</a>
+            <a href="#" class="hover:text-primary">Careers</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Contact</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="contact.html" class="hover:text-primary">Contact Us</a>
+            <a href="#" class="hover:text-primary">Privacy Policy</a>
+            <a href="#" class="hover:text-primary">Terms & Conditions</a>
+            <a href="#" class="hover:text-primary">BMI Calculator</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-slate-800 py-4 text-center text-xs text-slate-500"
+      >
+        Copyright © 2024 ADS GYM. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // Simple form handler (demo only)
+      const contactForm = document.getElementById("contactForm");
+      const formMessage = document.getElementById("formMessage");
+
+      if (contactForm && formMessage) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          formMessage.classList.remove("hidden");
+          contactForm.reset();
+          setTimeout(() => {
+            formMessage.classList.add("hidden");
+          }, 4000);
+        });
+      }
+
+      // ScrollReveal animations
+      ScrollReveal().reveal(".contact-details", {
+        distance: "40px",
+        origin: "left",
+        duration: 800,
+        delay: 150,
+      });
+      ScrollReveal().reveal(".contact-form", {
+        distance: "40px",
+        origin: "right",
+        duration: 800,
+        delay: 200,
+      });
+    </script>
+  </body>
+</html>

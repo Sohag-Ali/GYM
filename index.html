@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="ADS GYM - Transform your body with professional training"
+    />
+
+    <!-- Remix Icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Home | ADS GYM</title>
+
+    <script>
+      // optional: tailwind config tweak করলে এখানে করবে
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f97316",
+              dark: "#020617",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <!-- Navigation -->
+    <nav class="w-full border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur">
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2 nav__logo">
+          <div
+            class="h-9 w-9 flex items-center justify-center rounded-full bg-primary text-xs font-semibold tracking-tight"
+          >
+            ADS
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">
+            ADS <span class="text-primary">GYM</span>
+          </h2>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menu-btn"
+          class="nav__menu__btn inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
+        >
+          <span class="sr-only">Open main menu</span>
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+
+        <!-- Nav Links -->
+        <ul
+          id="nav-links"
+          class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
+        >
+          <li class="link">
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="classes.html"
+              class="hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="trainers.html"
+              class="hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="contact.html"
+              class="hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li class="link">
+            <a href="profile.html">
+              <button
+                class="btn inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800">
+        <ul
+          class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li class="pt-1">
+            <a href="profile.html">
+              <button
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header pt-10 md:pt-16">
+      <div
+        class="section__container header__container max-w-6xl mx-auto px-4 flex flex-col-reverse md:grid md:grid-cols-2 items-center gap-10"
+        id="home"
+      >
+        <!-- Content -->
+        <div class="header__content space-y-5">
+          <p class="text-sm uppercase tracking-[0.2em] text-primary">
+            Stay Fit &
+          </p>
+          <h1
+            class="section__header text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
+          >
+            Shape Yourself!
+          </h1>
+          <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+            Unleash your potential and embark on a journey towards a stronger,
+            fitter, and more confident you. Sign up for
+            <span class="font-semibold text-primary">"Make Your Body Shape"</span>
+            now and witness the incredible transformation your body is capable
+            of!
+          </p>
+          <div class="header__btn">
+            <a href="signup.html">
+              <button
+                class="btn inline-flex items-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg hover:bg-orange-500 transition"
+              >
+                Join Today
+              </button>
+            </a>
+          </div>
+
+          <div
+            class="flex items-center gap-6 pt-4 text-xs md:text-sm text-slate-400"
+          >
+            <div>
+              <p class="font-semibold text-slate-100">24/7 Access</p>
+              <p>Workout anytime, any day</p>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-100">Certified Trainers</p>
+              <p>Get expert guidance</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="header__image flex justify-center">
+          <div
+            class="relative w-full max-w-xs md:max-w-sm lg:max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-slate-800 shadow-[0_0_60px_rgba(248,113,22,0.35)]"
+          >
+            <img
+              src="assets/header.png"
+              alt="Fitness training at ADS GYM"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent"
+            ></div>
+            <div
+              class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs bg-slate-950/70 border border-slate-700 rounded-2xl px-3 py-2 backdrop-blur"
+            >
+              <div>
+                <p class="font-semibold text-slate-100">Today’s Members</p>
+                <p class="text-slate-400">120+ already checked in</p>
+              </div>
+              <span
+                class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-slate-950 font-bold"
+                >120</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Client Testimonials Section -->
+    <section
+      class="section__container client__container max-w-6xl mx-auto px-4 py-16 md:py-20"
+      id="client"
+    >
+      <div class="text-center max-w-2xl mx-auto">
+        <h2
+          class="section__header text-3xl md:text-4xl font-extrabold tracking-tight mb-3"
+        >
+          What People Say About Us?
+        </h2>
+        <p class="section__description text-sm md:text-base text-slate-300">
+          These testimonials serve as a testament to our commitment to helping
+          individuals achieve their fitness goals and creating a supportive
+          environment for everyone who walks through our doors.
+        </p>
+      </div>
+
+      <div class="mt-10 md:mt-14">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/Picsart_23-02-26_22-36-34-573[308].jpg"
+                    alt="Delowar Husain - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The trainers here customized a plan that balanced my work-life
+                  demands, and I've seen remarkable progress in my fitness
+                  journey. It's not just a gym; it's my sanctuary for self-care.
+                </p>
+                <h4 class="font-semibold text-slate-100">Delowar Husain</h4>
+                <h5 class="text-xs text-slate-400">Marketing Manager</h5>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/anda-Photoroom.jpg"
+                    alt="Andalib Rasdi - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The trainers' expertise and the gym's commitment to cleanliness
+                  have made it a safe haven for me to maintain my health and
+                  de-stress.
+                </p>
+                <h4 class="font-semibold text-slate-100">Andalib Rasdi</h4>
+                <h5 class="text-xs text-slate-400">Marketing Manager</h5>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/sohag.jpg"
+                    alt="Sohag Ali - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The variety of classes and the supportive community have kept
+                  me motivated. I've shed pounds, gained confidence, and found a
+                  new level of energy to inspire my students.
+                </p>
+                <h4 class="font-semibold text-slate-100">Sohag Ali</h4>
+                <h5 class="text-xs text-slate-400">Teacher</h5>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/client-4.jpg"
+                    alt="Sal Sabily Sifath - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  This gym's 24/7 access has been a lifesaver. Whether it's a
+                  late-night workout or an early morning session, the convenience
+                  here is unbeatable.
+                </p>
+                <h4 class="font-semibold text-slate-100">Sal Sabily Sifath</h4>
+                <h5 class="text-xs text-slate-400">Entrepreneur</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Pagination & Nav -->
+          <div class="swiper-pagination mt-6"></div>
+          <div
+            class="swiper-button-prev text-primary"
+          ></div>
+          <div
+            class="swiper-button-next text-primary"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer border-t border-slate-800 bg-slate-950">
+      <div
+        class="section__container footer__container max-w-6xl mx-auto px-4 py-10 md:py-14 grid gap-8 md:grid-cols-4"
+      >
+        <!-- Col 1 -->
+        <div class="footer__col space-y-4">
+          <div class="footer__logo">
+            <a
+              href="index.html"
+              class="text-xl font-bold tracking-tight hover:text-primary transition-colors"
+              >ADS GYM</a
+            >
+          </div>
+          <p class="text-sm text-slate-300">
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans. Let's sweat, achieve, and conquer
+            together!
+          </p>
+          <div class="footer__socials flex gap-3 text-xl">
+            <a href="#" aria-label="Facebook" class="hover:text-primary">
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="hover:text-primary">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="#" aria-label="Twitter" class="hover:text-primary">
+              <i class="ri-twitter-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer__col">
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Company</h4>
+          <div class="footer__links flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Business</a>
+            <a href="#" class="hover:text-primary">Franchise</a>
+            <a href="#" class="hover:text-primary">Partnership</a>
+            <a href="#" class="hover:text-primary">Network</a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer__col">
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">About Us</h4>
+          <div class="footer__links flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Blogs</a>
+            <a href="#" class="hover:text-primary">Security</a>
+            <a href="#" class="hover:text-primary">Careers</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer__col">
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Contact</h4>
+          <div class="footer__links flex flex-col gap-2 text-sm text-slate-300">
+            <a href="contact.html" class="hover:text-primary">Contact Us</a>
+            <a href="#" class="hover:text-primary">Privacy Policy</a>
+            <a href="#" class="hover:text-primary">Terms & Conditions</a>
+            <a href="#" class="hover:text-primary">BMI Calculator</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer__bar border-t border-slate-800 py-4 text-center text-xs text-slate-500"
+      >
+        Copyright © 2024 ADS GYM. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Main JS (nav toggle + swiper init) -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // Swiper init
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1.3,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+      // ScrollReveal simple example
+      ScrollReveal().reveal(".header__content", {
+        distance: "40px",
+        origin: "left",
+        duration: 800,
+        delay: 150,
+      });
+      ScrollReveal().reveal(".header__image", {
+        distance: "40px",
+        origin: "right",
+        duration: 800,
+        delay: 200,
+      });
+      ScrollReveal().reveal(".client__card", {
+        distance: "40px",
+        origin: "bottom",
+        duration: 800,
+        interval: 120,
+      });
+    </script>
+  </body>
+</html>

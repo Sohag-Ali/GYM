@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f97316",
+              dark: "#020617",
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>Trainers | ADS GYM</title>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav
+      class="w-full border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div
+            class="h-9 w-9 flex items-center justify-center rounded-full bg-primary text-xs font-semibold tracking-tight"
+          >
+            ADS
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">
+            ADS <span class="text-primary">GYM</span>
+          </h2>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menu-btn"
+          class="inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
+        >
+          <span class="sr-only">Open main menu</span>
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+
+        <!-- Nav Links (desktop) -->
+        <ul
+          id="nav-links"
+          class="hidden md:flex items-center gap-6 text-sm font-medium"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="text-primary font-semibold"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a href="profile.html">
+              <button
+                class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800">
+        <ul
+          class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="block py-1 text-primary font-semibold"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Package</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li class="pt-1">
+            <a href="profile.html">
+              <button
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Trainers Section -->
+    <main class="flex-1">
+      <section
+        id="trainer"
+        class="max-w-6xl mx-auto px-4 py-12 md:py-16 trainer__container"
+      >
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3 section__header"
+          >
+            Our Trainers
+          </h2>
+          <p
+            class="text-sm md:text-base text-slate-300 section__description"
+          >
+            Our trainers are more than just experts in exercise; they are
+            passionate about helping you achieve your health and fitness goals.
+            They are equipped to tailor workout programs to meet your unique
+            needs.
+          </p>
+        </div>
+
+        <div class="grid gap-8 trainer__grid">
+          <!-- Trainer 1 -->
+          <div
+            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+          >
+            <div class="md:w-2/5">
+              <img
+                src="assets/trainer-1.jpg"
+                alt="James Rodriguez"
+                class="w-full h-56 md:h-full object-cover trainer-img"
+              />
+            </div>
+            <div
+              class="md:w-3/5 p-5 md:p-6 flex flex-col justify-center trainer__card"
+            >
+              <h4 class="text-lg font-semibold text-slate-100">
+                James Rodriguez
+              </h4>
+              <h5 class="text-xs uppercase tracking-wide text-primary mt-1">
+                Strength and Conditioning
+              </h5>
+              <hr class="border-slate-800 my-3" />
+              <p class="text-sm text-slate-300 mb-4 trainer__content">
+                With a background in competitive sports, James is dedicated to
+                helping you reach your peak physical performance with powerful,
+                safe, and structured training.
+              </p>
+              <div class="flex gap-3 text-xl text-slate-300 trainer__socials">
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-facebook-fill"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-google-fill"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-instagram-line"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-twitter-fill"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 2 -->
+          <div
+            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse"
+          >
+            <div class="md:w-2/5">
+              <img
+                src="assets/trainer-2.jpg"
+                alt="Mark Harris"
+                class="w-full h-56 md:h-full object-cover trainer-img"
+              />
+            </div>
+            <div
+              class="md:w-3/5 p-5 md:p-6 flex flex-col justify-center trainer__card"
+            >
+              <h4 class="text-lg font-semibold text-slate-100">
+                Mark Harris
+              </h4>
+              <h5 class="text-xs uppercase tracking-wide text-primary mt-1">
+                HIIT and Functional
+              </h5>
+              <hr class="border-slate-800 my-3" />
+              <p class="text-sm text-slate-300 mb-4 trainer__content">
+                Mark’s energetic and dynamic HIIT sessions are designed to push
+                your limits, boost metabolism, and torch calories while keeping
+                workouts fun and engaging.
+              </p>
+              <div class="flex gap-3 text-xl text-slate-300 trainer__socials">
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-facebook-fill"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-google-fill"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-instagram-line"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-twitter-fill"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 3 -->
+          <div
+            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+          >
+            <div class="md:w-2/5">
+              <img
+                src="assets/trainer-3.jpg"
+                alt="Emily Davis"
+                class="w-full h-56 md:h-full object-cover trainer-img"
+              />
+            </div>
+            <div
+              class="md:w-3/5 p-5 md:p-6 flex flex-col justify-center trainer__card"
+            >
+              <h4 class="text-lg font-semibold text-slate-100">
+                Emily Davis
+              </h4>
+              <h5 class="text-xs uppercase tracking-wide text-primary mt-1">
+                Yoga and Mindfulness
+              </h5>
+              <hr class="border-slate-800 my-3" />
+              <p class="text-sm text-slate-300 mb-4 trainer__content">
+                Emily's sessions are not just about physical postures; they’re
+                about cultivating inner peace, balance, and mindfulness to
+                support your overall well-being.
+              </p>
+              <div class="flex gap-3 text-xl text-slate-300 trainer__socials">
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-facebook-fill"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-google-fill"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-instagram-line"></i
+                ></a>
+                <a href="#" class="hover:text-primary"
+                  ><i class="ri-twitter-fill"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950">
+      <div
+        class="max-w-6xl mx-auto px-4 py-10 md:py-14 grid gap-8 md:grid-cols-4"
+      >
+        <div class="space-y-4">
+          <div>
+            <a
+              href="index.html"
+              class="text-xl font-bold tracking-tight hover:text-primary transition-colors"
+              >ADS GYM</a
+            >
+          </div>
+          <p class="text-sm text-slate-300">
+            Take the first step towards a healthier, stronger you with our
+            unbeatable pricing plans. Let's sweat, achieve, and conquer
+            together!
+          </p>
+          <div class="flex gap-3 text-xl">
+            <a href="#" class="hover:text-primary">
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a href="#" class="hover:text-primary">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="#" class="hover:text-primary">
+              <i class="ri-twitter-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Company</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Business</a>
+            <a href="#" class="hover:text-primary">Franchise</a>
+            <a href="#" class="hover:text-primary">Partnership</a>
+            <a href="#" class="hover:text-primary">Network</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">About Us</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="#" class="hover:text-primary">Blogs</a>
+            <a href="#" class="hover:text-primary">Security</a>
+            <a href="#" class="hover:text-primary">Careers</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold mb-3 text-slate-100">Contact</h4>
+          <div class="flex flex-col gap-2 text-sm text-slate-300">
+            <a href="contact.html" class="hover:text-primary">Contact Us</a>
+            <a href="#" class="hover:text-primary">Privacy Policy</a>
+            <a href="#" class="hover:text-primary">Terms & Conditions</a>
+            <a href="#" class="hover:text-primary">BMI Calculator</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-slate-800 py-4 text-center text-xs text-slate-500"
+      >
+        Copyright © 2024 ADS GYM. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // ScrollReveal animations
+      ScrollReveal().reveal("#trainer h2", {
+        distance: "30px",
+        origin: "top",
+        duration: 700,
+        delay: 120,
+      });
+      ScrollReveal().reveal(".trainer__grid > div", {
+        distance: "40px",
+        origin: "bottom",
+        duration: 800,
+        interval: 150,
+      });
+    </script>
+  </body>
+</html>
