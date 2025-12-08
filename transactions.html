@@ -469,6 +469,39 @@
           renderTable();
         });
       });
+
+
+    
+  
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      const currentPage = window.location.pathname.split("/").pop();
+
+      document.querySelectorAll("#nav-links a").forEach(link => {
+  const linkPage = link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+    link.classList.add(
+      "text-primary",
+      "after:absolute",
+      "after:left-0",
+      "after:-bottom-1",
+      "after:w-full",
+      "after:h-[2px]",
+      "after:bg-primary",
+      "after:rounded-full"
+    );
+  }
+});
+     
     </script>
   </body>
 </html>
