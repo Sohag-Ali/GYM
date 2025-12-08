@@ -119,37 +119,51 @@
           class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
         >
           <li class="link">
-            <a href="index.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors relative"
               >Home</a
             >
           </li>
           <li class="link">
-            <a href="about.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors relative"
               >About</a
             >
           </li>
           <li class="link">
-            <a href="classes.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="classes.html"
+              class="hover:text-primary transition-colors relative"
               >Classes</a
             >
           </li>
           <li class="link">
-            <a href="trainers.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="trainers.html"
+              class="hover:text-primary transition-colors relative"
               >Trainers</a
             >
           </li>
           <li class="link">
-            <a href="pricing.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors relative"
               >Package</a
             >
           </li>
-          <li class="link" id="transactionLink">
-            <a href="transactions.html" class="hover:text-primary transition-colors relative"
+          <li class="link" id="transactionLink ">
+            <a
+              href="transactions.html"
+              class="hover:text-primary transition-colors relative"
               >Transaction</a
             >
           </li>
           <li class="link">
-            <a href="contact.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="contact.html"
+              class="hover:text-primary transition-colors relative"
               >Contact Us</a
             >
           </li>
@@ -228,7 +242,9 @@
           </li>
 
           <li class="link" id="transactionLink">
-            <a href="transactions.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="transactions.html"
+              class="hover:text-primary transition-colors relative"
               >Transaction</a
             >
           </li>
@@ -335,14 +351,12 @@
               </ul>
             </div>
             <div class="pt-5">
-              <a href="price.html" class="block">
-                <button
-                  class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg hover:bg-orange-500 transition btn
-                  transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:bg-orange-500"
-                >
-                  Join Now
-                </button>
-              </a>
+              <button
+                onclick="handleJoinNow()"
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg hover:bg-orange-500 transition btn transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:bg-orange-500"
+              >
+                Join Now
+              </button>
             </div>
           </div>
 
@@ -393,13 +407,12 @@
               </ul>
             </div>
             <div class="pt-5">
-              <a href="price.html" class="block">
-                <button
-                  class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg hover:bg-orange-500 transition btn transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:bg-orange-500"
-                >
-                  Join Now
-                </button>
-              </a>
+              <button
+                onclick="handleJoinNow()"
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg hover:bg-orange-500 transition btn transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:bg-orange-500"
+              >
+                Join Now
+              </button>
             </div>
           </div>
 
@@ -453,13 +466,12 @@
               </ul>
             </div>
             <div class="pt-5">
-              <a href="price.html" class="block">
-                <button
-                  class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg hover:bg-orange-500 transition btn transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:bg-orange-500"
-                >
-                  Join Now
-                </button>
-              </a>
+              <button
+                onclick="handleJoinNow()"
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg hover:bg-orange-500 transition btn transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] hover:bg-orange-500"
+              >
+                Join Now
+              </button>
             </div>
           </div>
         </div>
@@ -549,22 +561,22 @@
 
       const currentPage = window.location.pathname.split("/").pop();
 
-document.querySelectorAll("#nav-links a").forEach(link => {
-  const linkPage = link.getAttribute("href");
+      document.querySelectorAll("#nav-links a").forEach((link) => {
+        const linkPage = link.getAttribute("href");
 
-  if (linkPage === currentPage) {
-    link.classList.add(
-      "text-primary",
-      "after:absolute",
-      "after:left-0",
-      "after:-bottom-1",
-      "after:w-full",
-      "after:h-[2px]",
-      "after:bg-primary",
-      "after:rounded-full"
-    );
-  }
-});
+        if (linkPage === currentPage) {
+          link.classList.add(
+            "text-primary",
+            "after:absolute",
+            "after:left-0",
+            "after:-bottom-1",
+            "after:w-full",
+            "after:h-[2px]",
+            "after:bg-primary",
+            "after:rounded-full"
+          );
+        }
+      });
 
       // ScrollReveal animations
       ScrollReveal().reveal("#price h2", {
@@ -579,6 +591,20 @@ document.querySelectorAll("#nav-links a").forEach(link => {
         duration: 800,
         interval: 120,
       });
+
+      function handleJoinNow() {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+        if (isLoggedIn) {
+          // user logged in → সরাসরি price page
+          window.location.href = "price.html";
+        } else {
+          // user logged in না → আগে login page
+          // তারপর login successful হলে price page এ redirect করতে বলব
+          localStorage.setItem("redirectAfterLogin", "price.html");
+          window.location.href = "login.html";
+        }
+      }
 
       function updateNavAuthUI() {
         const isLoggedIn = localStorage.getItem("loggedIn") === "true";
