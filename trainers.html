@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -120,32 +117,44 @@
           class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
         >
           <li class="link">
-            <a href="index.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors relative"
               >Home</a
             >
           </li>
           <li class="link">
-            <a href="about.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors relative"
               >About</a
             >
           </li>
           <li class="link">
-            <a href="classes.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="classes.html"
+              class="hover:text-primary transition-colors relative"
               >Classes</a
             >
           </li>
           <li class="link">
-            <a href="trainers.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="trainers.html"
+              class="hover:text-primary transition-colors relative"
               >Trainers</a
             >
           </li>
           <li class="link">
-            <a href="pricing.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors relative"
               >Package</a
             >
           </li>
           <li class="link">
-            <a href="contact.html" class="hover:text-primary transition-colors relative"
+            <a
+              href="contact.html"
+              class="hover:text-primary transition-colors relative"
               >Contact Us</a
             >
           </li>
@@ -277,9 +286,7 @@
           >
             Our Trainers
           </h2>
-          <p
-            class="text-sm md:text-base text-slate-300 section__description"
-          >
+          <p class="text-sm md:text-base text-slate-300 section__description">
             Our trainers are more than just experts in exercise; they are
             passionate about helping you achieve your health and fitness goals.
             They are equipped to tailor workout programs to meet your unique
@@ -290,9 +297,11 @@
         <div class="grid gap-8 trainer__grid">
           <!-- Trainer 1 -->
           <div
-            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_0_90px_rgba(249,115,22,0.55)] hover:border-orange-400"
           >
-            <div class="md:w-2/5">
+            <div
+              class="md:w-2/5 transition-all duration-500 ease-out hover:scale-105"
+            >
               <img
                 src="assets/trainer-1.jpg"
                 alt="James Rodriguez"
@@ -333,9 +342,11 @@
 
           <!-- Trainer 2 -->
           <div
-            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse"
+            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_0_90px_rgba(249,115,22,0.55)] hover:border-orange-400"
           >
-            <div class="md:w-2/5">
+            <div
+              class="md:w-2/5 transition-all duration-500 ease-out hover:scale-110"
+            >
               <img
                 src="assets/trainer-2.jpg"
                 alt="Mark Harris"
@@ -345,9 +356,7 @@
             <div
               class="md:w-3/5 p-5 md:p-6 flex flex-col justify-center trainer__card"
             >
-              <h4 class="text-lg font-semibold text-slate-100">
-                Mark Harris
-              </h4>
+              <h4 class="text-lg font-semibold text-slate-100">Mark Harris</h4>
               <h5 class="text-xs uppercase tracking-wide text-primary mt-1">
                 HIIT and Functional
               </h5>
@@ -376,9 +385,11 @@
 
           <!-- Trainer 3 -->
           <div
-            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row"
+            class="bg-slate-900/80 border border-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_0_90px_rgba(249,115,22,0.55)] hover:border-orange-400"
           >
-            <div class="md:w-2/5">
+            <div
+              class="md:w-2/5 transition-all duration-500 ease-out hover:scale-110"
+            >
               <img
                 src="assets/trainer-3.jpg"
                 alt="Emily Davis"
@@ -388,9 +399,7 @@
             <div
               class="md:w-3/5 p-5 md:p-6 flex flex-col justify-center trainer__card"
             >
-              <h4 class="text-lg font-semibold text-slate-100">
-                Emily Davis
-              </h4>
+              <h4 class="text-lg font-semibold text-slate-100">Emily Davis</h4>
               <h5 class="text-xs uppercase tracking-wide text-primary mt-1">
                 Yoga and Mindfulness
               </h5>
@@ -502,22 +511,22 @@
 
       const currentPage = window.location.pathname.split("/").pop();
 
-document.querySelectorAll("#nav-links a").forEach(link => {
-  const linkPage = link.getAttribute("href");
+      document.querySelectorAll("#nav-links a").forEach((link) => {
+        const linkPage = link.getAttribute("href");
 
-  if (linkPage === currentPage) {
-    link.classList.add(
-      "text-primary",
-      "after:absolute",
-      "after:left-0",
-      "after:-bottom-1",
-      "after:w-full",
-      "after:h-[2px]",
-      "after:bg-primary",
-      "after:rounded-full"
-    );
-  }
-});
+        if (linkPage === currentPage) {
+          link.classList.add(
+            "text-primary",
+            "after:absolute",
+            "after:left-0",
+            "after:-bottom-1",
+            "after:w-full",
+            "after:h-[2px]",
+            "after:bg-primary",
+            "after:rounded-full"
+          );
+        }
+      });
 
       // ScrollReveal animations
       ScrollReveal().reveal("#trainer h2", {
