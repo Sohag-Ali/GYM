@@ -603,11 +603,10 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
         const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
         if (isLoggedIn) {
-          // user logged in  সরাসরি price page
+          // user logged in  price page
           window.location.href = "price.html";
         } else {
-          // user logged in না  আগে login page
-          // তারপর login successful হলে price page এ redirect করতে বলব
+         
           localStorage.setItem("redirectAfterLogin", "price.html");
           window.location.href = "login.html";
         }
@@ -642,7 +641,7 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
       function handleLogout() {
         localStorage.setItem("loggedIn", "false");
         updateNavAuthUI();
-        window.location.href = "index.html"; // logout হলে home এ ফেরত
+        window.location.href = "index.html"; // logout 
       }
 
       // Logout button listener

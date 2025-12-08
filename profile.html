@@ -166,7 +166,7 @@
             >
           </li>
 
-          <!-- ডেস্কটপে Login / Signup / Profile / Logout -->
+          <!-- Login / Signup / Profile / Logout -->
           <li class="link" id="loginLink">
             <a href="login.html" class="hover:text-primary transition-colors"
               >Login</a
@@ -255,7 +255,7 @@
             >
           </li>
 
-          <!-- মোবাইলের Login / Signup / Profile / Logout -->
+          <!--  Login / Signup / Profile / Logout -->
           <li id="mLoginLink">
             <a
               href="login.html"
@@ -626,7 +626,7 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
       function handleLogout() {
         localStorage.setItem("loggedIn", "false");
         updateNavAuthUI();
-        window.location.href = "index.html"; // logout হলে home এ ফেরত
+        window.location.href = "index.html"; // logout 
       }
 
       // Logout button listener
