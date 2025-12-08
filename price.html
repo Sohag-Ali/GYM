@@ -72,22 +72,23 @@
       </div>
 
       <div class="form-group flex flex-col gap-1.5">
-        <label
-          for="membership"
-          class="text-xs font-medium text-slate-200"
-        >
-          Membership Type
-        </label>
-        <select
-          id="membership"
-          required
-          class="w-full rounded-xl bg-slate-950/60 border border-slate-700 px-3 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/60"
-        >
-          <option value="Basic Plan">Basic Plan - 50 BDT</option>
-          <option value="Weekly Plan">Weekly Plan - 300 BDT</option>
-          <option value="Monthly Plan">Monthly Plan - 1200 BDT</option>
-        </select>
-      </div>
+  <label
+    for="membership"
+    class="text-xs font-medium text-slate-200"
+  >
+    Membership Type
+  </label>
+  <select
+    id="membership"
+    required
+    class="w-full rounded-xl bg-slate-950/60 border border-slate-700 px-3 py-2.5 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/60"
+  >
+    <option value="Basic Plan" data-amount="50">Basic Plan - 50 BDT</option>
+    <option value="Weekly Plan" data-amount="300">Weekly Plan - 300 BDT</option>
+    <option value="Monthly Plan" data-amount="1200">Monthly Plan - 1200 BDT</option>
+  </select>
+</div>
+
 
       <div class="form-group flex flex-col gap-1.5">
         <label

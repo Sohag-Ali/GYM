@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Payment History | ADS GYM</title>
+
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f97316",
+              dark: "#020617",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+    <!-- NAVBAR -->
+    <nav
+      class="w-full border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div
+            class="h-9 w-9 flex items-center justify-center rounded-full bg-primary text-xs font-semibold tracking-tight"
+          >
+            ADS
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">
+            ADS <span class="text-primary">GYM</span>
+          </h2>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menu-btn"
+          class="inline-flex items-center justify-center rounded-md border border-slate-700 px-2.5 py-1.5 text-slate-100 hover:bg-slate-800 hover:border-slate-600 md:hidden"
+        >
+          <span class="sr-only">Open main menu</span>
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+
+        <!-- Desktop Nav Links -->
+        <ul
+          id="nav-links"
+          class="hidden md:flex items-center gap-6 text-sm font-medium"
+        >
+          <li class="link">
+            <a
+              href="index.html"
+              class="hover:text-primary transition-colors relative"
+              >Home</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="about.html"
+              class="hover:text-primary transition-colors relative"
+              >About</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="classes.html"
+              class="hover:text-primary transition-colors relative"
+              >Classes</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="trainers.html"
+              class="hover:text-primary transition-colors relative"
+              >Trainers</a
+            >
+          </li>
+          <li class="link">
+            <a
+              href="pricing.html"
+              class="hover:text-primary transition-colors relative"
+              >Package</a
+            >
+          </li>
+
+          <!-- Transactions (only when logged in) -->
+          <li class="link" id="transactionLink" style="display: none">
+            <a
+              href="transactions.html"
+              class="hover:text-primary transition-colors relative"
+              >Transactions</a
+            >
+          </li>
+
+          <li class="link">
+            <a
+              href="contact.html"
+              class="hover:text-primary transition-colors relative"
+              >Contact Us</a
+            >
+          </li>
+
+          <!-- Desktop Login / Signup / Profile / Logout -->
+          <li class="link" id="loginLink">
+            <a
+              href="login.html"
+              class="hover:text-primary transition-colors"
+              >Login</a
+            >
+          </li>
+          <li class="link" id="signupLink">
+            <a
+              href="signup.html"
+              class="hover:text-primary transition-colors"
+              >Signup</a
+            >
+          </li>
+
+          <li class="link" id="profileLink" style="display: none">
+            <a href="profile.html">
+              <button
+                class="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+          <li class="link" id="logoutBtn" style="display: none">
+            <button
+              class="inline-flex items-center rounded-full bg-slate-800 px-4 py-1.5 text-sm font-semibold text-slate-100 hover:bg-slate-700 transition"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden border-t border-slate-800"
+      >
+        <ul
+          class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="block py-1 hover:text-primary transition-colors relative"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-1 hover:text-primary transition-colors relative"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="classes.html"
+              class="block py-1 hover:text-primary transition-colors relative"
+              >Classes</a
+            >
+          </li>
+          <li>
+            <a
+              href="trainers.html"
+              class="block py-1 hover:text-primary transition-colors relative"
+              >Trainers</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="block py-1 hover:text-primary transition-colors relative"
+              >Package</a
+            >
+          </li>
+
+          <!-- Mobile Transactions -->
+          <li id="mTransactionLink" style="display: none">
+            <a
+              href="transactions.html"
+              class="block py-1 hover:text-primary"
+              >Transactions</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="contact.html"
+              class="block py-1 hover:text-primary transition-colors relative"
+              >Contact Us</a
+            >
+          </li>
+
+          <!-- Mobile Login / Signup / Profile / Logout -->
+          <li id="mLoginLink">
+            <a
+              href="login.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Login</a
+            >
+          </li>
+          <li id="mSignupLink">
+            <a
+              href="signup.html"
+              class="block py-1 hover:text-primary transition-colors"
+              >Signup</a
+            >
+          </li>
+          <li class="pt-1" id="mProfileLink" style="display: none">
+            <a href="profile.html">
+              <button
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+              >
+                Profile
+              </button>
+            </a>
+          </li>
+          <li id="mLogoutBtn" style="display: none">
+            <button
+              class="w-full inline-flex justify-center rounded-full bg-slate-800 px-4 py-1.5 text-sm font-semibold text-slate-100 hover:bg-slate-700 transition"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main
+      id="mainContent"
+      class="flex-1 flex items-center justify-center px-4 py-8 md:py-10"
+    >
+      <div
+        class="w-full max-w-4xl bg-slate-900/80 border border-slate-800 rounded-3xl shadow-2xl p-5 sm:p-6 md:p-8"
+      >
+        <!-- Header row -->
+        <div
+          class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-5 md:mb-6"
+        >
+          <div class="space-y-1">
+            <h1
+              class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight"
+            >
+              Payment <span class="text-primary">History</span>
+            </h1>
+            <p class="text-xs md:text-sm text-slate-400">
+              All your recent membership payments at ADS GYM.
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 sm:gap-3 sm:justify-end text-xs md:text-sm"
+          >
+            <button
+              id="clearAllBtn"
+              class="inline-flex items-center gap-1.5 rounded-full border border-red-500/70 px-3 py-1.5 text-[11px] sm:text-xs text-red-400 hover:bg-red-500/10 transition"
+            >
+              <i class="ri-delete-bin-5-line text-sm"></i>
+              Clear All
+            </button>
+            <a
+              href="index.html"
+              class="inline-flex items-center text-[11px] sm:text-xs md:text-sm text-primary hover:text-orange-400"
+            >
+              ← Back to Home
+            </a>
+          </div>
+        </div>
+
+        <!-- No data message -->
+        <div
+          id="noData"
+          class="hidden text-center text-sm text-slate-400 py-4"
+        >
+          No payment history found.
+        </div>
+
+        <!-- Table wrapper -->
+        <div class="overflow-x-auto">
+          <table
+            class="min-w-full text-[11px] sm:text-xs md:text-sm text-left border-collapse"
+          >
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-300 bg-slate-900">
+                <th class="py-2 pr-2 whitespace-nowrap">Name</th>
+                <th class="py-2 px-2 whitespace-nowrap">Email</th>
+                <th class="py-2 px-2 whitespace-nowrap">Membership</th>
+                <th class="py-2 px-2 whitespace-nowrap">Amount</th>
+                <th class="py-2 px-2 whitespace-nowrap">Date & Time</th>
+                <th class="py-2 pl-2 pr-1 text-right whitespace-nowrap">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- SCRIPT -->
+    <script>
+      // ------------ Auth UI update (Navbar) ------------
+      function updateNavAuthUI() {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+        const loginLink = document.getElementById("loginLink");
+        const signupLink = document.getElementById("signupLink");
+        const profileLink = document.getElementById("profileLink");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        const mLoginLink = document.getElementById("mLoginLink");
+        const mSignupLink = document.getElementById("mSignupLink");
+        const mProfileLink = document.getElementById("mProfileLink");
+        const mLogoutBtn = document.getElementById("mLogoutBtn");
+
+        const transactionLink = document.getElementById("transactionLink");
+        const mTransactionLink = document.getElementById("mTransactionLink");
+
+        // Login & Signup hide/show
+        [loginLink, signupLink, mLoginLink, mSignupLink].forEach((el) => {
+          if (!el) return;
+          el.style.display = isLoggedIn ? "none" : "";
+        });
+
+        // Profile, Logout, Transactions show only when logged in
+        [
+          profileLink,
+          logoutBtn,
+          mProfileLink,
+          mLogoutBtn,
+          transactionLink,
+          mTransactionLink,
+        ].forEach((el) => {
+          if (!el) return;
+          el.style.display = isLoggedIn ? "" : "none";
+        });
+      }
+
+      // ------------ Logout handler ------------
+      function handleLogout() {
+        localStorage.setItem("loggedIn", "false");
+        updateNavAuthUI();
+        window.location.href = "index.html";
+      }
+
+      // ------------ Main Logic ------------
+      document.addEventListener("DOMContentLoaded", () => {
+        // ✅ Auth check: logged in না থাকলে login page এ পাঠাও
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        if (!isLoggedIn) {
+          window.location.href = "login.html";
+          return;
+        }
+
+        // Navbar auth UI update
+        updateNavAuthUI();
+
+        // Logout buttons
+        const logoutBtn = document.getElementById("logoutBtn");
+        const mLogoutBtn = document.getElementById("mLogoutBtn");
+        if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
+        if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
+
+        // ------------ Mobile menu toggle ------------
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (menuBtn && mobileMenu) {
+          menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+
+        // ------------ Payment history টেবিল render ------------
+        const historyBody = document.getElementById("historyBody");
+        const noData = document.getElementById("noData");
+        const clearAllBtn = document.getElementById("clearAllBtn");
+
+        let history = JSON.parse(localStorage.getItem("paymentHistory") || "[]");
+
+        function renderTable() {
+          historyBody.innerHTML = "";
+
+          if (!history.length) {
+            noData.classList.remove("hidden");
+            return;
+          } else {
+            noData.classList.add("hidden");
+          }
+
+          history
+            .slice()
+            .reverse() // latest first
+            .forEach((item, idxFromTop) => {
+              const originalIndex = history.length - 1 - idxFromTop;
+
+              const tr = document.createElement("tr");
+              tr.className =
+                "border-b border-slate-900/60 hover:bg-slate-800/40 transition";
+              tr.dataset.index = originalIndex;
+
+              tr.innerHTML = `
+                <td class="py-2 pr-2 whitespace-nowrap">${item.name}</td>
+                <td class="py-2 px-2 whitespace-nowrap">${item.email}</td>
+                <td class="py-2 px-2 whitespace-nowrap">${item.membership}</td>
+                <td class="py-2 px-2 whitespace-nowrap">${item.amount}</td>
+                <td class="py-2 px-2 text-slate-400 whitespace-nowrap">${item.date}</td>
+                <td class="py-2 pl-2 pr-1 text-right whitespace-nowrap">
+                  <button
+                    class="delete-btn inline-flex items-center gap-1.5 rounded-full border border-slate-700 px-2.5 py-1 text-[11px] sm:text-xs text-slate-200 hover:bg-slate-800 transition"
+                    data-index="${originalIndex}"
+                  >
+                    <i class="ri-close-line text-xs"></i>
+                    Delete
+                  </button>
+                </td>
+              `;
+
+              historyBody.appendChild(tr);
+            });
+        }
+
+        renderTable();
+
+        // Single row delete
+        historyBody.addEventListener("click", (e) => {
+          const btn = e.target.closest(".delete-btn");
+          if (!btn) return;
+
+          const index = parseInt(btn.dataset.index, 10);
+          if (Number.isNaN(index)) return;
+
+          if (!confirm("Delete this payment record?")) return;
+
+          history.splice(index, 1);
+          localStorage.setItem("paymentHistory", JSON.stringify(history));
+          renderTable();
+        });
+
+        // Clear all
+        clearAllBtn.addEventListener("click", () => {
+          if (!history.length) return;
+          if (!confirm("Are you sure you want to clear all payment history?"))
+            return;
+
+          history = [];
+          localStorage.removeItem("paymentHistory");
+          renderTable();
+        });
+      });
+    </script>
+  </body>
+</html>

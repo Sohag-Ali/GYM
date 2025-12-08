@@ -1,57 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const paymentForm = document.getElementById("payment-form");
-    const messageDiv = document.getElementById("message");
+  const paymentForm = document.getElementById("payment-form");
+  const messageDiv = document.getElementById("message");
 
-    // Add event listener for form submission
-    paymentForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent the default form submission behavior
+  // ---- Payment History save করার ফাংশন ----
+  function savePaymentHistory(data) {
+    const existing = JSON.parse(localStorage.getItem("paymentHistory") || "[]");
+    existing.push(data);
+    localStorage.setItem("paymentHistory", JSON.stringify(existing));
+  }
 
-        // Clear any previous message
-        messageDiv.textContent = "";
+  // ---- Form Submit ----
+  paymentForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // default submit বন্ধ
 
-        // Get input values
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const membership = document.getElementById("membership").value;
-        const cardNumber = document.getElementById("card-number").value.trim();
-        const expiry = document.getElementById("expiry").value.trim();
-        const cvv = document.getElementById("cvv").value.trim();
+    messageDiv.textContent = "";
 
-        // Basic validation
-        if (!validateCardNumber(cardNumber) || !validateExpiry(expiry) || !validateCVV(cvv)) {
-            messageDiv.textContent = "Please enter valid payment details.";
-            messageDiv.style.color = "red";
-            return;
-        }
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const membershipSelect = document.getElementById("membership");
+    const membership = membershipSelect.value;
 
-        // Simulate payment processing
-        messageDiv.textContent = "Processing payment...";
-        messageDiv.style.color = "blue";
+    const selectedOption =
+      membershipSelect.options[membershipSelect.selectedIndex];
+    const amount = selectedOption.dataset.amount; // data-amount থেকে টাকা
 
-        // Simulate a delay (e.g., waiting for payment gateway response)
-        setTimeout(() => {
-            // Display success message
-            messageDiv.textContent = `Payment successful! Thank you, ${name}, for purchasing the ${membership}.`;
-            messageDiv.style.color = "green";
-            paymentForm.reset(); // Clear the form fields
-        }, 2000); // 2-second delay to simulate payment processing
-    });
+    const cardNumber = document.getElementById("card-number").value.trim();
+    const expiry = document.getElementById("expiry").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
 
-    // Validate card number (basic validation for 16-digit numbers)
-    function validateCardNumber(cardNumber) {
-        const cardNumberPattern = /^[0-9]{16}$/;
-        return cardNumberPattern.test(cardNumber);
+    // Basic validation
+    if (
+      !validateCardNumber(cardNumber) ||
+      !validateExpiry(expiry) ||
+      !validateCVV(cvv)
+    ) {
+      messageDiv.textContent = "Please enter valid payment details.";
+      messageDiv.style.color = "red";
+      return;
     }
 
-    // Validate expiry date in MM/YY format
-    function validateExpiry(expiry) {
-        const expiryPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
-        return expiryPattern.test(expiry);
-    }
+    // Processing message
+    messageDiv.textContent = "Processing payment...";
+    messageDiv.style.color = "skyblue";
 
-    // Validate CVV (3-digit number)
-    function validateCVV(cvv) {
-        const cvvPattern = /^[0-9]{3}$/;
-        return cvvPattern.test(cvv);
-    }
+    setTimeout(() => {
+      // ✅ Payment successful
+      messageDiv.textContent = `Payment successful! Thank you, ${name}, for purchasing the ${membership}.`;
+      messageDiv.style.color = "lightgreen";
+
+      // ✅ History data prepare
+      const paymentData = {
+        name,
+        email,
+        membership,
+        amount: amount + " BDT",
+        date: new Date().toLocaleString(),
+      };
+
+      // ✅ LocalStorage এ save
+      savePaymentHistory(paymentData);
+
+      paymentForm.reset();
+
+      // সামান্য delay দিয়ে transaction page এ পাঠাই
+      setTimeout(() => {
+        window.location.href = "transactions.html"; // নতুন page
+      }, 1500);
+    }, 2000); // payment process simulate
+  });
+
+  // Validate card number (basic 16-digit)
+  function validateCardNumber(cardNumber) {
+    const cardNumberPattern = /^[0-9]{16}$/;
+    return cardNumberPattern.test(cardNumber);
+  }
+
+  // Validate expiry date MM/YY
+  function validateExpiry(expiry) {
+    const expiryPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    return expiryPattern.test(expiry);
+  }
+
+  // Validate CVV (3-digit)
+  function validateCVV(cvv) {
+    const cvvPattern = /^[0-9]{3}$/;
+    return cvvPattern.test(cvv);
+  }
 });
