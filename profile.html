@@ -350,28 +350,29 @@
                 class="grid grid-cols-[110px,minmax(0,1fr)] gap-2 border-b border-slate-800 pb-2"
               >
                 <span class="text-slate-400 font-medium">Name</span>
-                <span>Mr. X</span>
+                <span class="editable">Mr. X</span>
+
               </div>
 
               <div
                 class="grid grid-cols-[110px,minmax(0,1fr)] gap-2 border-b border-slate-800 pb-2"
               >
                 <span class="text-slate-400 font-medium">Membership Plan</span>
-                <span>Monthly</span>
+                <span class="editable">Monthly</span>
               </div>
 
               <div
                 class="grid grid-cols-[110px,minmax(0,1fr)] gap-2 border-b border-slate-800 pb-2"
               >
                 <span class="text-slate-400 font-medium">Email</span>
-                <span>mrx@gmail.com</span>
+                <span class="editable">mrx@gmail.com</span>
               </div>
 
               <div
                 class="grid grid-cols-[110px,minmax(0,1fr)] gap-2 border-b border-slate-800 pb-2"
               >
                 <span class="text-slate-400 font-medium">Telephone</span>
-                <span>01313862541</span>
+                <span class="editable">01313862541</span>
               </div>
 
               <div
@@ -380,7 +381,7 @@
                 <span class="text-slate-400 font-medium">Membership</span>
                 <span>
                   Due for renewal
-                  <span class="font-semibold text-amber-300">
+                  <span class="font-semibold text-amber-300 editable">
                     03/12/24
                   </span>
                 </span>
@@ -390,18 +391,29 @@
                 class="grid grid-cols-[110px,minmax(0,1fr)] gap-2"
               >
                 <span class="text-slate-400 font-medium">Start Date</span>
-                <span>03/08/22</span>
+                <span class="editable">03/08/22</span>
               </div>
 
               <!-- Optional action row -->
               <div class="mt-4 flex flex-wrap gap-3">
                 <button
-                  class="inline-flex items-center gap-1.5 rounded-full border border-slate-700 px-3 py-1.5 text-xs hover:bg-slate-800 transition"
-                >
-                  <i class="ri-edit-line text-sm"></i>
-                  Edit Profile
-                </button>
+  id="editProfileBtn"
+  class="inline-flex items-center gap-1.5 rounded-full border border-slate-700 px-3 py-1.5 text-xs hover:bg-slate-800 transition"
+>
+  <i class="ri-edit-line text-sm"></i>
+  Edit Profile
+</button>
+
+<button
+  id="saveProfileBtn"
+  class="hidden inline-flex items-center gap-1.5 rounded-full border border-green-600 px-3 py-1.5 text-xs text-green-400 hover:bg-green-600/10 transition"
+>
+  <i class="ri-check-line text-sm"></i>
+  Save
+</button>
+
                 <button
+                id="profileLogoutBtn"
                   class="inline-flex items-center gap-1.5 rounded-full border border-red-500/60 px-3 py-1.5 text-xs text-red-400 hover:bg-red-500/10 transition"
                 >
                   <i class="ri-logout-box-r-line text-sm"></i>
@@ -520,6 +532,46 @@ document.querySelectorAll("#nav-links a").forEach(link => {
         delay: 150,
       });
 
+
+// edit
+function enableProfileEdit() {
+  const fields = document.querySelectorAll(".editable");
+
+  fields.forEach((field) => {
+    const value = field.textContent.trim();
+    const input = document.createElement("input");
+
+    input.value = value;
+    input.className =
+      "w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-100";
+
+    field.replaceWith(input);
+  });
+
+  document.getElementById("saveProfileBtn").classList.remove("hidden");
+  document.getElementById("editProfileBtn").classList.add("hidden");
+}
+
+function saveProfile() {
+  const inputs = document.querySelectorAll(".profile-info input");
+
+  inputs.forEach((input) => {
+    const span = document.createElement("span");
+    span.className = "editable";
+    span.textContent = input.value;
+    input.replaceWith(span);
+  });
+
+  alert("✔️ Profile Updated Successfully!");
+
+  document.getElementById("saveProfileBtn").classList.add("hidden");
+  document.getElementById("editProfileBtn").classList.remove("hidden");
+}
+
+document.getElementById("editProfileBtn")?.addEventListener("click", enableProfileEdit);
+document.getElementById("saveProfileBtn")?.addEventListener("click", saveProfile);
+
+
       function updateNavAuthUI() {
         const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
@@ -546,6 +598,7 @@ document.querySelectorAll("#nav-links a").forEach(link => {
         });
       }
 
+
       function handleLogout() {
         localStorage.setItem("loggedIn", "false");
         updateNavAuthUI();
@@ -558,6 +611,8 @@ document.querySelectorAll("#nav-links a").forEach(link => {
       if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
       if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
 
+      const profileLogoutBtn = document.getElementById("profileLogoutBtn");
+if (profileLogoutBtn) profileLogoutBtn.addEventListener("click", handleLogout);
       // পেজ লোড হলে একবার চেক করো
       updateNavAuthUI();
     </script>
