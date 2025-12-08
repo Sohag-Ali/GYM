@@ -151,32 +151,32 @@
           class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
         >
           <li class="link">
-            <a href="index.html" class="hover:text-primary transition-colors"
+            <a href="index.html" class="hover:text-primary transition-colors relative"
               >Home</a
             >
           </li>
           <li class="link">
-            <a href="about.html" class="hover:text-primary transition-colors"
+            <a href="about.html" class="hover:text-primary transition-colors relative"
               >About</a
             >
           </li>
           <li class="link">
-            <a href="classes.html" class="hover:text-primary transition-colors"
+            <a href="classes.html" class="hover:text-primary transition-colors relative"
               >Classes</a
             >
           </li>
           <li class="link">
-            <a href="trainers.html" class="hover:text-primary transition-colors"
+            <a href="trainers.html" class="hover:text-primary transition-colors relative"
               >Trainers</a
             >
           </li>
           <li class="link">
-            <a href="pricing.html" class="hover:text-primary transition-colors"
+            <a href="pricing.html" class="hover:text-primary transition-colors relative"
               >Package</a
             >
           </li>
           <li class="link">
-            <a href="contact.html" class="hover:text-primary transition-colors"
+            <a href="contact.html" class="hover:text-primary transition-colors relative"
               >Contact Us</a
             >
           </li>
@@ -196,7 +196,7 @@
           <li class="link" id="profileLink" style="display: none">
             <a href="profile.html">
               <button
-                class="btn inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+                class="btn inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition relative"
               >
                 Profile
               </button>
@@ -221,42 +221,42 @@
           <li>
             <a
               href="index.html"
-              class="block py-1 hover:text-primary transition-colors"
+              class="block py-1 hover:text-primary transition-colors relative"
               >Home</a
             >
           </li>
           <li>
             <a
               href="about.html"
-              class="block py-1 hover:text-primary transition-colors"
+              class="block py-1 hover:text-primary transition-colors relative"
               >About</a
             >
           </li>
           <li>
             <a
               href="classes.html"
-              class="block py-1 hover:text-primary transition-colors"
+              class="block py-1 hover:text-primary transition-colors relative"
               >Classes</a
             >
           </li>
           <li>
             <a
               href="trainers.html"
-              class="block py-1 hover:text-primary transition-colors"
+              class="block py-1 hover:text-primary transition-colors relative"
               >Trainers</a
             >
           </li>
           <li>
             <a
               href="pricing.html"
-              class="block py-1 hover:text-primary transition-colors"
+              class="block py-1 hover:text-primary transition-colors relative"
               >Package</a
             >
           </li>
           <li>
             <a
               href="contact.html"
-              class="block py-1 hover:text-primary transition-colors"
+              class="block py-1 hover:text-primary transition-colors relative"
               >Contact Us</a
             >
           </li>
@@ -279,7 +279,7 @@
           <li class="pt-1" id="mProfileLink" style="display: none">
             <a href="profile.html">
               <button
-                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition"
+                class="w-full inline-flex justify-center rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-slate-950 shadow hover:bg-orange-500 transition relative"
               >
                 Profile
               </button>
@@ -709,6 +709,27 @@
           checkedInText.innerText = `${count}+ already checked in`;
         });
       }
+
+      // Active navbar underline
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll("#nav-links a").forEach(link => {
+  const linkPage = link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+    link.classList.add(
+      "text-primary",
+      "after:absolute",
+      "after:left-0",
+      "after:-bottom-1",
+      "after:w-full",
+      "after:h-[2px]",
+      "after:bg-primary",
+      "after:rounded-full"
+    );
+  }
+});
+
 
       // Swiper init
 
