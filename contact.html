@@ -545,9 +545,15 @@
         });
       }
 
-      const currentPage = window.location.pathname.split("/").pop();
+// Active navbar underline
+let currentPage = window.location.pathname.split("/").pop();
 
-document.querySelectorAll("#nav-links a").forEach(link => {
+// jodi root "/" hoi ba empty string hoi tahole "index.html" dhore nao
+if (!currentPage || currentPage === "/") {
+  currentPage = "index.html";
+}
+
+document.querySelectorAll("#nav-links a").forEach((link) => {
   const linkPage = link.getAttribute("href");
 
   if (linkPage === currentPage) {
@@ -563,6 +569,7 @@ document.querySelectorAll("#nav-links a").forEach(link => {
     );
   }
 });
+
 
       // ScrollReveal animations
       ScrollReveal().reveal(".contact-details", {

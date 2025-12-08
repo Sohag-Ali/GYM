@@ -467,7 +467,13 @@
         });
       }
 
-      const currentPage = window.location.pathname.split("/").pop();
+      // Active navbar underline
+      let currentPage = window.location.pathname.split("/").pop();
+
+      // jodi root "/" hoi ba empty string hoi tahole "index.html" dhore nao
+      if (!currentPage || currentPage === "/") {
+        currentPage = "index.html";
+      }
 
       document.querySelectorAll("#nav-links a").forEach((link) => {
         const linkPage = link.getAttribute("href");

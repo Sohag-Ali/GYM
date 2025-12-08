@@ -522,24 +522,31 @@
         });
       }
 
-      const currentPage = window.location.pathname.split("/").pop();
+    // Active navbar underline
+let currentPage = window.location.pathname.split("/").pop();
 
-      document.querySelectorAll("#nav-links a").forEach((link) => {
-        const linkPage = link.getAttribute("href");
+// jodi root "/" hoi ba empty string hoi tahole "index.html" dhore nao
+if (!currentPage || currentPage === "/") {
+  currentPage = "index.html";
+}
 
-        if (linkPage === currentPage) {
-          link.classList.add(
-            "text-primary",
-            "after:absolute",
-            "after:left-0",
-            "after:-bottom-1",
-            "after:w-full",
-            "after:h-[2px]",
-            "after:bg-primary",
-            "after:rounded-full"
-          );
-        }
-      });
+document.querySelectorAll("#nav-links a").forEach((link) => {
+  const linkPage = link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+    link.classList.add(
+      "text-primary",
+      "after:absolute",
+      "after:left-0",
+      "after:-bottom-1",
+      "after:w-full",
+      "after:h-[2px]",
+      "after:bg-primary",
+      "after:rounded-full"
+    );
+  }
+});
+
       // Simple ScrollReveal for profile
       ScrollReveal().reveal(".profile-page > div", {
         distance: "40px",

@@ -1172,10 +1172,16 @@ hover:scale-[1.05] hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(248,113,22,0
         });
       }
 
-      // Active navbar underline
-const currentPage = window.location.pathname.split("/").pop();
+      
+// Active navbar underline
+let currentPage = window.location.pathname.split("/").pop();
 
-document.querySelectorAll("#nav-links a").forEach(link => {
+// jodi root "/" hoi ba empty string hoi tahole "index.html" dhore nao
+if (!currentPage || currentPage === "/") {
+  currentPage = "index.html";
+}
+
+document.querySelectorAll("#nav-links a").forEach((link) => {
   const linkPage = link.getAttribute("href");
 
   if (linkPage === currentPage) {
@@ -1191,6 +1197,7 @@ document.querySelectorAll("#nav-links a").forEach(link => {
     );
   }
 });
+
 
 
       // Swiper init
