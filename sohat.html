@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Continuous Card Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+  <style>
+    /* Continuous scroll animation */
+    @keyframes scrollLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .slider-track {
+      animation: scrollLoop 18s linear infinite;
+    }
+
+    /* Stop animation on hover */
+    .slider-container:hover .slider-track {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-white py-10">
+
+  <section class="">
+
+      
+      <!-- Slider Track (duplicated items for infinite loop) -->
+      <div id="sliderTrack" class="flex gap-4 w-max slider-track">
+
+        <!-- ORIGINAL 4 CARDS -->
+        <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/Picsart_23-02-26_22-36-34-573[308].jpg"
+                    alt="Delowar Husain - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The trainers here customized a plan that balanced my work-life
+                  demands, and I've seen remarkable progress in my fitness
+                  journey. It's not just a gym; it's my sanctuary for self-care.
+                </p>
+                <h4 class="font-semibold text-slate-100">Delowar Husain</h4>
+                <h5 class="text-xs text-slate-400">Marketing Manager</h5>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/anda-Photoroom.jpg"
+                    alt="Andalib Rasdi - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The trainers' expertise and the gym's commitment to
+                  cleanliness have made it a safe haven for me to maintain my
+                  health and de-stress.
+                </p>
+                <h4 class="font-semibold text-slate-100">Andalib Rasdi</h4>
+                <h5 class="text-xs text-slate-400">Marketing Manager</h5>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/sohag.jpg"
+                    alt="Sohag Ali - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The variety of classes and the supportive community have kept
+                  me motivated. I've shed pounds, gained confidence, and found a
+                  new level of energy to inspire my students.
+                </p>
+                <h4 class="font-semibold text-slate-100">Sohag Ali</h4>
+                <h5 class="text-xs text-slate-400">Teacher</h5>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/client-4.jpg"
+                    alt="Sal Sabily Sifath - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  This gym's 24/7 access has been a lifesaver. Whether it's a
+                  late-night workout or an early morning session, the
+                  convenience here is unbeatable.
+                </p>
+                <h4 class="font-semibold text-slate-100">Sal Sabily Sifath</h4>
+                <h5 class="text-xs text-slate-400">Entrepreneur</h5>
+              </div>
+            </div>
+
+        <!-- DUPLICATE 4 CARDS FOR INFINITE LOOP -->
+        <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/Picsart_23-02-26_22-36-34-573[308].jpg"
+                    alt="Delowar Husain - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The trainers here customized a plan that balanced my work-life
+                  demands, and I've seen remarkable progress in my fitness
+                  journey. It's not just a gym; it's my sanctuary for self-care.
+                </p>
+                <h4 class="font-semibold text-slate-100">Delowar Husain</h4>
+                <h5 class="text-xs text-slate-400">Marketing Manager</h5>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/anda-Photoroom.jpg"
+                    alt="Andalib Rasdi - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The trainers' expertise and the gym's commitment to
+                  cleanliness have made it a safe haven for me to maintain my
+                  health and de-stress.
+                </p>
+                <h4 class="font-semibold text-slate-100">Andalib Rasdi</h4>
+                <h5 class="text-xs text-slate-400">Marketing Manager</h5>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/sohag.jpg"
+                    alt="Sohag Ali - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  The variety of classes and the supportive community have kept
+                  me motivated. I've shed pounds, gained confidence, and found a
+                  new level of energy to inspire my students.
+                </p>
+                <h4 class="font-semibold text-slate-100">Sohag Ali</h4>
+                <h5 class="text-xs text-slate-400">Teacher</h5>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div
+                class="client__card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto"
+              >
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <img
+                    src="assets/client-4.jpg"
+                    alt="Sal Sabily Sifath - Client testimonial"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="client__ratings flex gap-0.5 mb-3 text-yellow-400">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+                <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                  This gym's 24/7 access has been a lifesaver. Whether it's a
+                  late-night workout or an early morning session, the
+                  convenience here is unbeatable.
+                </p>
+                <h4 class="font-semibold text-slate-100">Sal Sabily Sifath</h4>
+                <h5 class="text-xs text-slate-400">Entrepreneur</h5>
+              </div>
+            </div>
+
+      </div>
+   
+
+  </section>
+
+
+
+</body>
+</html>

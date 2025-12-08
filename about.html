@@ -15,6 +15,21 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+        <style>
+    /* Continuous scroll animation */
+    @keyframes scrollLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .slider-track {
+      animation: scrollLoop 18s linear infinite;
+    }
+
+    /* Stop animation on hover */
+    .slider-container:hover .slider-track {
+      animation-play-state: paused;
+    }
+  </style>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -347,161 +362,213 @@
       </section>
 
       <!-- Testimonials Section -->
-      <section
-        id="client"
-        class="max-w-6xl mx-auto px-4 pb-14 md:pb-20 section__container client__container"
+   <section
+  class="section__container client__container max-w-6xl mx-auto px-4 py-16 md:py-20 overflow-x-hidden"
+  id="client"
+>
+  <div class="text-center max-w-2xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">
+      What People Say About Us?
+    </h2>
+    <p class="text-sm md:text-base text-slate-300">
+      These testimonials highlight the real experiences of our valued members.
+    </p>
+  </div>
+
+  <!-- Continuous Slider Wrapper -->
+  <div class="relative mt-10 md:mt-14 overflow-hidden slider-container">
+    <!-- Animated Track -->
+    <div id="sliderTrack" class="flex gap-6 slider-track">
+
+      <!-- ========== ORIGINAL 4 CARDS ========== -->
+
+      <!-- Card 1 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
       >
-        <div class="text-center max-w-2xl mx-auto">
-          <h2
-            class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3 section__header"
-          >
-            What People Say About Us?
-          </h2>
-          <p
-            class="text-sm md:text-base text-slate-300 section__description"
-          >
-            These testimonials serve as a testament to our commitment to helping
-            individuals achieve their fitness goals, and fostering a supportive
-            environment for everyone who walks through our doors.
-          </p>
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/Picsart_23-02-26_22-36-34-573[308].jpg"
+               class="w-full h-full object-cover" />
         </div>
 
-        <div class="mt-10 md:mt-14">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
-                <div
-                  class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto client__card"
-                >
-                  <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
-                    <img
-                      src="assets/Picsart_23-02-26_22-36-34-573[308].jpg"
-                      alt="Delowar Husain"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="flex gap-0.5 mb-3 text-yellow-400 client__ratings"
-                  >
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-line"></i></span>
-                  </div>
-                  <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-                    The trainers here customized a plan that balanced my
-                    work-life demands, and I've seen remarkable progress in my
-                    fitness journey. It's not just a gym; it's my sanctuary for
-                    self-care.
-                  </p>
-                  <h4 class="font-semibold text-slate-100">Delowar Husain</h4>
-                  <h5 class="text-xs text-slate-400">Marketing Manager</h5>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="swiper-slide">
-                <div
-                  class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto client__card"
-                >
-                  <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
-                    <img
-                      src="assets/anda-Photoroom.jpg"
-                      alt="Andalib Rasdi"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="flex gap-0.5 mb-3 text-yellow-400 client__ratings"
-                  >
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-half-fill"></i></span>
-                  </div>
-                  <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-                    The trainers' expertise and the gym's commitment to
-                    cleanliness during these times have made it a safe haven for
-                    me to maintain my health and de-stress.
-                  </p>
-                  <h4 class="font-semibold text-slate-100">Andalib Rasdi</h4>
-                  <h5 class="text-xs text-slate-400">Marketing Manager</h5>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="swiper-slide">
-                <div
-                  class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto client__card"
-                >
-                  <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
-                    <img
-                      src="assets/sohag.jpg"
-                      alt="Sohag Ali"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="flex gap-0.5 mb-3 text-yellow-400 client__ratings"
-                  >
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-half-fill"></i></span>
-                    <span><i class="ri-star-line"></i></span>
-                  </div>
-                  <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-                    The variety of classes and the supportive community have
-                    kept me motivated. I've shed pounds, gained confidence, and
-                    found a new level of energy to inspire my students.
-                  </p>
-                  <h4 class="font-semibold text-slate-100">Sohag Ali</h4>
-                  <h5 class="text-xs text-slate-400">Marketing Manager</h5>
-                </div>
-              </div>
-
-              <!-- Slide 4 -->
-              <div class="swiper-slide">
-                <div
-                  class="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-7 shadow-lg flex flex-col items-center text-center max-w-md mx-auto client__card"
-                >
-                  <div class="w-20 h-20 rounded-full overflow-hidden mb-4">
-                    <img
-                      src="assets/client-4.jpg"
-                      alt="Sal Sabily Sifath"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="flex gap-0.5 mb-3 text-yellow-400 client__ratings"
-                  >
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                    <span><i class="ri-star-fill"></i></span>
-                  </div>
-                  <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-                    This gym's 24/7 access has been a lifesaver. Whether it's a
-                    late-night workout or an early morning session, the
-                    convenience here is unbeatable.
-                  </p>
-                  <h4 class="font-semibold text-slate-100">
-                    Sal Sabily Sifath
-                  </h4>
-                  <h5 class="text-xs text-slate-400">Entrepreneur</h5>
-                </div>
-              </div>
-            </div>
-
-            <!-- Swiper pagination & nav (optional) -->
-            <div class="swiper-pagination mt-6"></div>
-          </div>
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-line"></i>
         </div>
-      </section>
+
+        <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-3">
+          The trainers here designed a routine perfect for my work-life balance.
+        </p>
+
+        <h4 class="font-semibold text-base">Delowar Husain</h4>
+        <p class="text-[10px] text-slate-400">Marketing Manager</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/anda-Photoroom.jpg" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-half-fill"></i>
+        </div>
+
+        <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-3">
+          Clean environment and expert trainers — my go-to fitness place!
+        </p>
+
+        <h4 class="font-semibold text-base">Andalib Rasdi</h4>
+        <p class="text-[10px] text-slate-400">Marketing Manager</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/sohag.jpg" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+          <i class="ri-star-line"></i>
+        </div>
+
+        <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-3">
+          The supportive community here keeps me motivated every day!
+        </p>
+
+        <h4 class="font-semibold text-base">Sohag Ali</h4>
+        <p class="text-[10px] text-slate-400">Teacher</p>
+      </article>
+
+      <!-- Card 4 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/client-4.jpg" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+        </div>
+
+        <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-3">
+          24/7 access is a lifesaver — perfect for my busy schedule!
+        </p>
+
+        <h4 class="font-semibold text-base">Sal Sabily Sifath</h4>
+        <p class="text-[10px] text-slate-400">Entrepreneur</p>
+      </article>
+
+
+      <!-- ========== DUPLICATED CARDS (for infinite looping) ========== -->
+      <!-- Copy SAME 4 cards again (no need to rewrite text here for clarity) -->
+      <!-- Duplicate 1 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/Picsart_23-02-26_22-36-34-573[308].jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-line"></i>
+        </div>
+        <p class="text-xs md:text-sm text-slate-300 mb-3">The trainers here customized a plan for me.</p>
+        <h4 class="font-semibold text-base">Delowar Husain</h4>
+        <p class="text-[10px] text-slate-400">Marketing Manager</p>
+      </article>
+
+      <!-- Duplicate 2 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/anda-Photoroom.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-half-fill"></i>
+        </div>
+        <p class="text-xs md:text-sm text-slate-300 mb-3">Very clean, supportive and motivating environment!</p>
+        <h4 class="font-semibold text-base">Andalib Rasdi</h4>
+        <p class="text-[10px] text-slate-400">Marketing Manager</p>
+      </article>
+
+      <!-- Duplicate 3 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/sohag.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+          <i class="ri-star-line"></i>
+        </div>
+        <p class="text-xs md:text-sm text-slate-300 mb-3">Great classes and positive vibes!</p>
+        <h4 class="font-semibold text-base">Sohag Ali</h4>
+        <p class="text-[10px] text-slate-400">Teacher</p>
+      </article>
+
+      <!-- Duplicate 4 -->
+      <article
+        class="client__card flex-none 
+               w-[75vw] sm:w-[45vw] md:w-[30vw] lg:w-[26vw] max-w-sm
+               bg-slate-900/80 border border-slate-800 rounded-2xl 
+               px-5 py-7 flex flex-col items-center text-center shadow-lg"
+      >
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-3">
+          <img src="assets/client-4.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex gap-0.5 text-yellow-400 text-sm mb-2">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+        </div>
+        <p class="text-xs md:text-sm text-slate-300 mb-3">Amazing 24/7 facility!</p>
+        <h4 class="font-semibold text-base">Sal Sabily Sifath</h4>
+        <p class="text-[10px] text-slate-400">Entrepreneur</p>
+      </article>
+
+    </div>
+  </div>
+</section>
     </main>
 
     <!-- Footer -->
@@ -587,26 +654,26 @@
       }
 
       // Swiper init (testimonials)
-      const swiper = new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1.3,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        },
-      });
+      // const swiper = new Swiper(".swiper", {
+      //   slidesPerView: 1,
+      //   spaceBetween: 24,
+      //   loop: true,
+      //   pagination: {
+      //     el: ".swiper-pagination",
+      //     clickable: true,
+      //   },
+      //   breakpoints: {
+      //     640: {
+      //       slidesPerView: 1.3,
+      //     },
+      //     768: {
+      //       slidesPerView: 2,
+      //     },
+      //     1024: {
+      //       slidesPerView: 3,
+      //     },
+      //   },
+      // });
 
       // ScrollReveal animations
       ScrollReveal().reveal("#about .relative", {
