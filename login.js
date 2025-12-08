@@ -31,6 +31,17 @@ if (loginForm) {
 
       showMessage("Login successful! Redirecting...", false, "lightgreen");
 
+      // Redirect if needed
+const redirectPage = localStorage.getItem("redirectAfterLogin");
+
+if (redirectPage) {
+  localStorage.removeItem("redirectAfterLogin");
+  window.location.href = redirectPage;   // example: "price.html"
+} else {
+  window.location.href = "index.html";   // default
+}
+
+
       setTimeout(() => {
         window.location.href = "index.html"; // home page
       }, 1000);
@@ -68,3 +79,4 @@ if (facebookBtn) {
     showMessage("Facebook login is not connected yet (demo).");
   });
 }
+
