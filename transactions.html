@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment History | ADS GYM</title>
 
     <!-- Remix Icon CDN -->
@@ -118,16 +115,12 @@
 
           <!-- Desktop Login / Signup / Profile / Logout -->
           <li class="link" id="loginLink">
-            <a
-              href="login.html"
-              class="hover:text-primary transition-colors"
+            <a href="login.html" class="hover:text-primary transition-colors"
               >Login</a
             >
           </li>
           <li class="link" id="signupLink">
-            <a
-              href="signup.html"
-              class="hover:text-primary transition-colors"
+            <a href="signup.html" class="hover:text-primary transition-colors"
               >Signup</a
             >
           </li>
@@ -152,10 +145,7 @@
       </div>
 
       <!-- Mobile dropdown -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden border-t border-slate-800"
-      >
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800">
         <ul
           class="flex flex-col gap-2 px-4 py-3 text-sm font-medium bg-slate-950"
         >
@@ -197,9 +187,7 @@
 
           <!-- Mobile Transactions -->
           <li id="mTransactionLink" style="display: none">
-            <a
-              href="transactions.html"
-              class="block py-1 hover:text-primary"
+            <a href="transactions.html" class="block py-1 hover:text-primary"
               >Transactions</a
             >
           </li>
@@ -289,10 +277,7 @@
         </div>
 
         <!-- No data message -->
-        <div
-          id="noData"
-          class="hidden text-center text-sm text-slate-400 py-4"
-        >
+        <div id="noData" class="hidden text-center text-sm text-slate-400 py-4">
           No payment history found.
         </div>
 
@@ -397,7 +382,9 @@
         const noData = document.getElementById("noData");
         const clearAllBtn = document.getElementById("clearAllBtn");
 
-        let history = JSON.parse(localStorage.getItem("paymentHistory") || "[]");
+        let history = JSON.parse(
+          localStorage.getItem("paymentHistory") || "[]"
+        );
 
         function renderTable() {
           historyBody.innerHTML = "";
@@ -470,9 +457,6 @@
         });
       });
 
-
-    
-  
       // Mobile menu toggle
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -485,23 +469,22 @@
 
       const currentPage = window.location.pathname.split("/").pop();
 
-      document.querySelectorAll("#nav-links a").forEach(link => {
-  const linkPage = link.getAttribute("href");
+      document.querySelectorAll("#nav-links a").forEach((link) => {
+        const linkPage = link.getAttribute("href");
 
-  if (linkPage === currentPage) {
-    link.classList.add(
-      "text-primary",
-      "after:absolute",
-      "after:left-0",
-      "after:-bottom-1",
-      "after:w-full",
-      "after:h-[2px]",
-      "after:bg-primary",
-      "after:rounded-full"
-    );
-  }
-});
-     
+        if (linkPage === currentPage) {
+          link.classList.add(
+            "text-primary",
+            "after:absolute",
+            "after:left-0",
+            "after:-bottom-1",
+            "after:w-full",
+            "after:h-[2px]",
+            "after:bg-primary",
+            "after:rounded-full"
+          );
+        }
+      });
     </script>
   </body>
 </html>
