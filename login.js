@@ -1,6 +1,4 @@
-// ============================
-// LOGIN FORM HANDLER
-// ============================
+
 
 const loginForm = document.getElementById("login-form");
 const messageEl = document.getElementById("message");
@@ -26,7 +24,7 @@ if (loginForm) {
     }
 
     if (savedUser.email === email && savedUser.password === password) {
-      // সফল login
+    
       localStorage.setItem("loggedIn", "true");
 
       showMessage("Login successful! Redirecting...", false, "lightgreen");
@@ -61,9 +59,7 @@ function showMessage(text, clear = false, color = "rgb(248,113,113)") {
   }
 }
 
-// ============================
-// SOCIAL BUTTONS (Mock)
-// ============================
+
 
 const googleBtn = document.getElementById("google-signup");
 const facebookBtn = document.getElementById("facebook-signup");

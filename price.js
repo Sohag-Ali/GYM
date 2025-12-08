@@ -2,16 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const paymentForm = document.getElementById("payment-form");
   const messageDiv = document.getElementById("message");
 
-  // ---- Payment History save করার ফাংশন ----
+  //  Payment History save 
   function savePaymentHistory(data) {
     const existing = JSON.parse(localStorage.getItem("paymentHistory") || "[]");
     existing.push(data);
     localStorage.setItem("paymentHistory", JSON.stringify(existing));
   }
 
-  // ---- Form Submit ----
+  //  Form Submit 
   paymentForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // default submit বন্ধ
+    event.preventDefault(); // default submit off
 
     messageDiv.textContent = "";
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const selectedOption =
       membershipSelect.options[membershipSelect.selectedIndex];
-    const amount = selectedOption.dataset.amount; // data-amount থেকে টাকা
+    const amount = selectedOption.dataset.amount; // data-amount theke taka
 
     const cardNumber = document.getElementById("card-number").value.trim();
     const expiry = document.getElementById("expiry").value.trim();
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // সামান্য delay দিয়ে transaction page এ পাঠাই
       setTimeout(() => {
-        window.location.href = "transactions.html"; // নতুন page
+        window.location.href = "transactions.html"; 
       }, 1500);
     }, 2000); // payment process simulate
   });

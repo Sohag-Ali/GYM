@@ -1,6 +1,4 @@
-// ============================
-// SIGNUP FORM HANDLER
-// ============================
+
 
 document.getElementById('signup-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Stop form from refreshing page
@@ -52,9 +50,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
 });
 
 
-// ============================
-// SOCIAL BUTTONS (Mock)
-// ============================
+
 
 document.getElementById('google-signup').addEventListener('click', function() {
     document.getElementById('message').innerText = "Google signup successful!";

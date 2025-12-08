@@ -1124,7 +1124,7 @@ hover:scale-[1.05] hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(248,113,22,0
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <!-- Main JS (nav toggle + swiper init) -->
+  
     <script>
       // Mobile menu toggle
       const menuBtn = document.getElementById("menu-btn");
@@ -1153,7 +1153,7 @@ hover:scale-[1.05] hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(248,113,22,0
         });
       }
 
-      // Increase Member Count on Image Click
+     
       // Increase Member Count on Image Click
       const memberCard = document.getElementById("memberCard");
       const memberCount = document.getElementById("memberCount");
@@ -1251,7 +1251,7 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
       function handleLogout() {
         localStorage.setItem("loggedIn", "false");
         updateNavAuthUI();
-        window.location.href = "index.html"; // logout হলে home এ ফেরত
+        window.location.href = "index.html"; // logout 
       }
 
       // Logout button listener
@@ -1260,7 +1260,6 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
       if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
       if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
 
-      // পেজ লোড হলে একবার চেক করো
       updateNavAuthUI();
     </script>
   </body>

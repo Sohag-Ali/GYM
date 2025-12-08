@@ -123,7 +123,7 @@
             >
           </li>
 
-          <!-- ডেস্কটপে Login / Signup / Profile / Logout -->
+          <!-- Login / Signup / Profile / Logout -->
           <li class="link" id="loginLink">
             <a href="login.html" class="hover:text-primary transition-colors"
               >Login</a
@@ -210,7 +210,7 @@
             >
           </li>
 
-          <!-- মোবাইলের Login / Signup / Profile / Logout -->
+          <!-- mobile Login / Signup / Profile / Logout -->
           <li id="mLoginLink">
             <a
               href="login.html"
@@ -258,7 +258,7 @@
             class="relative w-full max-w-sm md:max-w-md aspect-[4/5] flex items-center justify-center transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_0_90px_rgba(249,115,22,0.55)] hover:border-orange-200
             "
           >
-            <!-- dotted background -->
+            
             <img
               src="assets/dot-bg.png"
               alt="background pattern"
@@ -556,7 +556,7 @@
           <i class="ri-star-fill"></i>
         </div>
         <p class="text-xs md:text-sm text-slate-300 mb-3">Amazing 24/7 facility!</p>
-        <h4 class="font-semibold text-base">Sal Sabily Sifath</h4>
+        <h4 class="font-semibold text-base">Mr. Donal Tramp</h4>
         <p class="text-[10px] text-slate-400">Entrepreneur</p>
       </article>
 
@@ -724,7 +724,7 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
       function handleLogout() {
         localStorage.setItem("loggedIn", "false");
         updateNavAuthUI();
-        window.location.href = "index.html"; // logout হলে home এ ফেরত
+        window.location.href = "index.html"; // logout
       }
 
       // Logout button listener
