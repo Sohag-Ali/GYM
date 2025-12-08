@@ -82,8 +82,7 @@
           <i class="ri-menu-line text-xl"></i>
         </button>
 
-        <!-- Nav Links -->
-        <!-- <ul
+      
           id="nav-links"
           class="nav__links hidden md:flex items-center gap-6 text-sm font-medium"
         >
@@ -704,27 +703,7 @@
         });
       }
 
-      // Swiper init (testimonials)
-      // const swiper = new Swiper(".swiper", {
-      //   slidesPerView: 1,
-      //   spaceBetween: 24,
-      //   loop: true,
-      //   pagination: {
-      //     el: ".swiper-pagination",
-      //     clickable: true,
-      //   },
-      //   breakpoints: {
-      //     640: {
-      //       slidesPerView: 1.3,
-      //     },
-      //     768: {
-      //       slidesPerView: 2,
-      //     },
-      //     1024: {
-      //       slidesPerView: 3,
-      //     },
-      //   },
-      // });
+ 
 
       const currentPage = window.location.pathname.split("/").pop();
 
@@ -803,7 +782,7 @@ document.querySelectorAll("#nav-links a").forEach(link => {
       if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
       if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
 
-      // পেজ লোড হলে একবার চেক করো
+      // page load hole akbar check kore
       updateNavAuthUI();
     </script>
   </body>

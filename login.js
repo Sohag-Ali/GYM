@@ -17,7 +17,7 @@ if (loginForm) {
       return;
     }
 
-    // signup.js এ যেটা সেভ করেছি সেটাই পড়ছি
+    // signup.js jeta save kora oita porsi
     const savedUser = JSON.parse(localStorage.getItem("user"));
 
     if (!savedUser) {

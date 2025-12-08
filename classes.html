@@ -547,6 +547,8 @@ hover:scale-[1.05] hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(248,113,22,0
         });
       }
 
+      //  navbar er underline er jonno
+
         const currentPage = window.location.pathname.split("/").pop();
 
 document.querySelectorAll("#nav-links a").forEach(link => {
@@ -618,7 +620,7 @@ document.querySelectorAll("#nav-links a").forEach(link => {
       if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
       if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
 
-      // পেজ লোড হলে একবার চেক করো
+      // page load check
       updateNavAuthUI();
     </script>
   </body>

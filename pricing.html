@@ -596,10 +596,10 @@
         const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
         if (isLoggedIn) {
-          // user logged in → সরাসরি price page
+          // user logged in  সরাসরি price page
           window.location.href = "price.html";
         } else {
-          // user logged in না → আগে login page
+          // user logged in না  আগে login page
           // তারপর login successful হলে price page এ redirect করতে বলব
           localStorage.setItem("redirectAfterLogin", "price.html");
           window.location.href = "login.html";
@@ -644,7 +644,7 @@
       if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
       if (mLogoutBtn) mLogoutBtn.addEventListener("click", handleLogout);
 
-      // পেজ লোড হলে একবার চেক করো
+   
       updateNavAuthUI();
     </script>
   </body>

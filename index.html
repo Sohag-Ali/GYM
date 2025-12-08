@@ -1144,10 +1144,10 @@ hover:scale-[1.05] hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(248,113,22,0
           const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
           if (isLoggedIn) {
-            // User already logged in → Go to Pricing page
+            // User already logged in Go to Pricing page
             window.location.href = "pricing.html";
           } else {
-            // User not logged in → Go to Login page
+            // User not logged in  Go to Login page
             window.location.href = "login.html";
           }
         });
@@ -1167,7 +1167,7 @@ hover:scale-[1.05] hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(248,113,22,0
           // Update main count
           memberCount.innerText = count;
 
-          // Update "120+ already checked in"
+          // Update "40+ already checked in"
           checkedInText.innerText = `${count}+ already checked in`;
         });
       }
